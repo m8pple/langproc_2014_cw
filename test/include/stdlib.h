@@ -3,4 +3,8 @@
 
 void exit (int status);
 
+// uncomment as necessary
+//void* malloc (size_t size);
+//void free (void* ptr);
+
 #endif

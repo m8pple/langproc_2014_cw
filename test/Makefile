@@ -2,6 +2,13 @@
 
 COMPILER ?= ../bin/compiler
 
+# You are providing the ARM compiler
+ARM_CC ?= ../bin/compiler
+
+# Do you have ARM binutils as well?
+ARM_AS = 
+ARM_GCC = 
+
 ###############################
 ## General rules for building a test-case
 
@@ -13,18 +20,21 @@ got/%.s got/%.compile.log :got/%.i
 	echo "Compile"
 	$(COMPILER)   -S   -o   got/$*.s   got/$*.i   2>&1  | tee got/$*.compile.log
 
-got/%.o got/%.assemble.log : got/%.s
-	echo "Assemble"
-	as -o $@ $<   2>&1  | tee got/$*.assemble.log
+# These are all things you can do if you set up ARM cross-compilers
 
-got/%.exe got/%.link.log : got/%.o
-	gcc -o $@ $<   2>&1  | tee got/$*.link.log
+#got/%.o got/%.assemble.log : got/%.s
+#	$(ARM_AS) -o $@ $<   2>&1  | tee got/$*.assemble.log
 
-got/%.input :
-	if [ -e input/$*.input ] ; then cp input/$*.input $@; else echo "" > $@; fi
+#got/%.exe got/%.link.log : got/%.o
+#	$(ARM_GCC) -o $@ $<   2>&1  | tee got/$*.link.log
+
+#got/%.input :
+#	if [ -e input/$*.input ] ; then cp input/$*.input $@; else echo "" > $@; fi
 	
-got/%.output : got/%.exe got/%.input
-	cat got/$*.input | got/$*.exe > got/$*.output
+# This can be done with qemu
+
+#got/%.output : got/%.exe got/%.input
+#	cat got/$*.input | got/$*.exe > got/$*.output
 	
 	
 ###############################
@@ -45,9 +55,6 @@ TEST_INPUTS:=$(wildcard input/*.c)
 TEST_NAMES:=$(patsubst input/%.c,%,$(TEST_INPUTS))
 
 TEST_ASMS:=$(foreach i,$(TEST_NAMES), got/$(i).s)
-TEST_EXES:=$(foreach i,$(TEST_NAMES), got/$(i).s)
-TEST_OUTPUTS:=$(foreach i,$(TEST_NAMES), got/$(i).output)
 
 build : $(TEST_ASMS)
 
-run : $(TEST_OUTPUTS)

@@ -12,3 +12,4 @@ tests_build : bin/compiler
 tests_run : bin/compiler
 	cd test && $(MAKE) run
 
+all : build tests_run tests_build
