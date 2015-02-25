@@ -3,7 +3,7 @@
 
 // These have extern linkage by default
 
-int puts( const char * str, ...);
+int puts( const char * str);
 int printf( const char * str, ...);
 
 int putchar ( int character );
