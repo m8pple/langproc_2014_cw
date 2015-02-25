@@ -1,6 +1,4 @@
-.PRECIOUS : %.i %.assemble.log %.link.log %.compile.log
-
-COMPILER ?= ../bin/compiler
+.PRECIOUS : got/%.s got/%.i %.assemble.log %.link.log %.compile.log
 
 # You are providing the ARM compiler
 ARM_CC ?= ../bin/compiler
@@ -18,7 +16,7 @@ got/%.i : input/%.c
 
 got/%.s got/%.compile.log :got/%.i
 	echo "Compile"
-	$(COMPILER)   -S   -o   got/$*.s   got/$*.i   2>&1  | tee got/$*.compile.log
+	$(ARM_CC)   -S   -o   got/$*.s   got/$*.i   2>&1  | tee got/$*.compile.log
 
 # These are all things you can do if you set up ARM cross-compilers
 
