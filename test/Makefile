@@ -31,7 +31,8 @@ got/%.s got/%.compile.log :got/%.i
 #got/%.input :
 #	if [ -e input/$*.input ] ; then cp input/$*.input $@; else echo "" > $@; fi
 	
-# This can be done with qemu
+# This can be done with qemu-static if you set it up on your machine. It
+# is... lets say kind of useful
 
 #got/%.output : got/%.exe got/%.input
 #	cat got/$*.input | got/$*.exe > got/$*.output
@@ -58,3 +59,11 @@ TEST_ASMS:=$(foreach i,$(TEST_NAMES), got/$(i).s)
 
 build : $(TEST_ASMS)
 
+test : 
+	# One observes that if you were to:
+	# 1. scp run_all.sh got/*.s and got/*.input to the ARM
+	# 2. ssh to the arm, and run ./run_all.sh
+	# 3. scp got/*.output and got/*.log back from the ARM
+	#then you might have a nice automated test framework
+
+	
