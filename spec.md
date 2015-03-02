@@ -39,11 +39,11 @@ C constructs of increasing difficulty:
 
 Sample inputs are available:
 
-1. Basic: [A_sample1.c](samples/A_sample1.c), [A_sample2.c](samples/A_sample2.c), [A_sample3.c](samples/A_sample3.c), [A_sample4.c](samples/A_sample4.c)
+1. Basic: [A_sample1.c](test/input/A_sample1.c), [A_sample2.c](test/input/A_sample2.c), [A_sample3.c](test/input/A_sample3.c), [A_sample4.c](test/input/A_sample4.c)
 
-2. Control-flow: [B_sample5.c](samples/B_sample5.c), [B_sample6.c](samples/B_sample6.c), [B_sample5.c](samples/B_sample5.c) 
+2. Control-flow: [B_sample5.c](test/input/B_sample5.c), [B_sample6.c](test/input/B_sample6.c), [B_sample5.c](test/input/B_sample5.c) 
 
-3. Data-types: [C_sample8.c](samples/C_sample8.c), [C_sample9.c](samples/C_sample9.c)
+3. Data-types: [C_sample8.c](test/input/C_sample8.c), [C_sample9.c](test/input/C_sample9.c)
 
 However, the samples only identify the types of constructs,
 and do not represent the full set of source files used for testing.
