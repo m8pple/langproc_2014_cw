@@ -32,7 +32,7 @@ public:
     virtual void Print(std::ostream &dst) const
     {
         dst<<"[";
-        for(int i=0; i<entries.size(); i++){
+        for(unsigned i=0; i<entries.size(); i++){
             if(i!=0)
                 dst<<",";
             entries[i]->Print(dst);
