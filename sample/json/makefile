@@ -9,3 +9,6 @@ json_lex.yy.cpp : json_lex.lex json_parse.tab.h
 
 json : json.cpp json_lex.yy.cpp json_parse.tab.cpp json_parse.tab.h
 	g++ $(CPPFLAGS) json.cpp  json_lex.yy.cpp json_parse.tab.cpp  -o json
+
+all : json
+
