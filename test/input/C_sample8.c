@@ -1,4 +1,4 @@
-//Sample 7
+/* Sample 7 */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -13,6 +13,6 @@ int main(){
     for (index = 0; index< 5; index++){
         printf("%d", myarray[index]);
     }
-    
+
     exit(0);
 }

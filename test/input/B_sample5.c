@@ -1,4 +1,4 @@
-//Sample 4
+/* Sample 4 */
 #include <stdio.h>
 
 int main(){
@@ -10,6 +10,6 @@ int main(){
         a = a + 1;
     }
     printf("%d", b);
-    
+
     return 0;
 }

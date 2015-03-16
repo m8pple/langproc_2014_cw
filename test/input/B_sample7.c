@@ -1,4 +1,4 @@
-//Sample 6
+/* Sample 6 */
 #include <stdio.h>
 
 int incr( int X ){
@@ -12,6 +12,6 @@ int main(){
     a = 1;
     b = incr(a);
     printf("%d", b);
-    
+
     return 0;
 }

@@ -1,4 +1,4 @@
-//Sample 1
+/* Sample 1 */
 #include <stdio.h>
 #include <stdlib.h>
 
