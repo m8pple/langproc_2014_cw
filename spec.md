@@ -59,6 +59,9 @@ guaranteed that the arguments will _always_ appear in
 this order during testing. You are welcome (and encouraged)
 to add extra command line options as appropriate.
 
+The target language is C89, i.e. classic C where variables can
+only appear at the beginning of a scope ([hat tip to @OJFord](https://github.com/m8pple/langproc_2014_cw/issues/2)).
+
 The target architecture is ARM, little-endian. In terms of
 instruction set, you can assume at least ARM9 (though it
 really shouldn't matter for what you are doing).
